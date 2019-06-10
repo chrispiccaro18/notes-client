@@ -22,3 +22,5 @@ NoteForm.propTypes = {
 NoteForm.defaultProps = {
   submitText: 'submit'
 };
+
+export default NoteForm;
