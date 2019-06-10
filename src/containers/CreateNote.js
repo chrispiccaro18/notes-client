@@ -21,6 +21,10 @@ class CreateNote extends PureComponent {
     this.setState({ title: '', body: '' });
   }
 
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  }
+
   render() {
     const { title, body } = this.state;
     const noteFormProps = {
@@ -31,7 +35,7 @@ class CreateNote extends PureComponent {
       submitText: 'Create Note'
     };
     return (
-      <NoteForm props={noteFormProps} />
+      <NoteForm {...noteFormProps} />
     );
   }
 }
