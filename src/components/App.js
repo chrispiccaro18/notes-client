@@ -1,12 +1,17 @@
 import React from 'react';
-import CreateNote from '../containers/CreateNote';
-import AllNotes from '../containers/AllNotes';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import DisplayNote from '../containers/DisplayNote';
+import Header from './Header';
 
 export default function App() {
   return (
-    <>
-      <CreateNote />
-      <AllNotes />
-    </>
+    <Router>
+      <Header />
+      <Switch>
+        <Route path="/note/:id" component={DisplayNote} />
+        <Route path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 }
