@@ -18,7 +18,7 @@ class AllNotes extends PureComponent{
 
   render() {
     const { notes, loading } = this.props;
-    if(loading) <h1>Loading</h1>;
+    if(loading) return <h1>Loading</h1>;
     return (
       <Notes notes={notes} />
     );
@@ -36,7 +36,7 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect({
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-})(AllNotes);
+)(AllNotes);

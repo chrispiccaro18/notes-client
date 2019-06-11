@@ -5,8 +5,8 @@ import AllNotes from '../containers/AllNotes';
 export default function App() {
   return (
     <>
-      <AllNotes />
       <CreateNote />
+      <AllNotes />
     </>
   );
 }
