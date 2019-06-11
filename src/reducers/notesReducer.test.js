@@ -1,5 +1,5 @@
 import notesReducer from './notesReducer';
-import { NEW_NOTE_PENDING, NEW_NOTE } from '../actions/notesActions';
+import { NEW_NOTE_PENDING, NEW_NOTE, FETCH_NOTES_PENDING, FETCH_NOTES } from '../actions/notesActions';
 
 describe('notes reducer tests', () => {
   const initialState = {
@@ -25,6 +25,30 @@ describe('notes reducer tests', () => {
     expect(notesReducer({ ...initialState, loading: true }, {
       type: NEW_NOTE,
       payload: { title: 'hi', body: 'there' }
+    })).toEqual({
+      loading: false,
+      list: [{ title: 'hi', body: 'there' }]
+    });
+  });
+  
+  it('can handle a fetch notes pending', () => {
+    expect(notesReducer(initialState, {
+      type: FETCH_NOTES_PENDING
+    })).toEqual({
+      loading: true,
+      list: []
+    });
+
+    expect(initialState).toEqual({
+      loading: false,
+      list: []
+    });
+  });
+
+  it('can handle fetch notes action', () => {
+    expect(notesReducer({ ...initialState, loading: true }, {
+      type: FETCH_NOTES,
+      payload: [{ title: 'hi', body: 'there' }]
     })).toEqual({
       loading: false,
       list: [{ title: 'hi', body: 'there' }]
