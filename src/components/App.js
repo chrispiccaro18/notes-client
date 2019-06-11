@@ -7,8 +7,6 @@ import { withSession } from '../containers/auth/withSession';
 import Callback from '../containers/auth/Callback';
 
 export default function App() {
-  console.log(process.env);
-  
   return (
     <Router>
       <Header />
