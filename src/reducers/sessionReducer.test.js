@@ -1,6 +1,15 @@
 import sessionReducer from './sessionReducer';
 import { SET_SESSION } from '../actions/sessionActions';
 
+jest.mock('../services/auth.js', () => ({
+  login() {
+    
+  },
+  handleAuth() {
+    return Promise.resolve([]);
+  }
+}));
+
 describe('session reducer tests', () => {
   const initialState = {
     username: '',
