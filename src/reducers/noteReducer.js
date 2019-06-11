@@ -1,7 +1,11 @@
 import { FETCH_NOTE_PENDING, FETCH_NOTE } from '../actions/noteDetailActions';
 
 const initialState = {
-  detail: {},
+  detail: {
+    _id: '',
+    title: '',
+    body: ''
+  },
   loading: false
 };
 
