@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     new HtmlPlugin({ template: './src/index.html' }),
     new CleanWebpackPlugin(),
-    new DotEnv({ systemvars: true })
+    new DotEnv()
   ],
   module: {
     rules: [
