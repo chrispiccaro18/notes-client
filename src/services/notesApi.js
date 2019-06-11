@@ -9,3 +9,7 @@ export const createNote = note => {
 export const getNotes = () => {
   return get(BASE_PATH);
 };
+
+export const getNote = _id => {
+  return get(`${BASE_PATH}/${_id}`);
+};
