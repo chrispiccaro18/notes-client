@@ -2,7 +2,7 @@
 
 exports[`App component renders App 1`] = `
 <BrowserRouter>
-  <Header />
+  <Connect(Header) />
   <Switch>
     <Route
       component={
@@ -29,6 +29,11 @@ exports[`App component renders App 1`] = `
       path="/note/:id"
     />
     <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
       component={
         Object {
           "$$typeof": Symbol(react.memo),
@@ -39,7 +44,7 @@ exports[`App component renders App 1`] = `
         }
       }
       exact={true}
-      path="/"
+      path="/home"
     />
   </Switch>
 </BrowserRouter>
