@@ -1,6 +1,12 @@
 import noteReducer from './noteReducer';
 import { FETCH_NOTE_PENDING, FETCH_NOTE } from '../actions/noteDetailActions';
 
+jest.mock('../services/notesApi.js', () => ({
+  getNote(_id) {
+    return Promise.resolve([_id]);
+  } 
+}));
+
 describe('note reducer tests', () => {
   const initialState = {
     detail: {},
