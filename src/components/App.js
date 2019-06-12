@@ -5,6 +5,7 @@ import DisplayNote from '../containers/DisplayNote';
 import Header from './Header';
 import { withSession } from '../containers/auth/withSession';
 import Callback from '../containers/auth/Callback';
+import Welcome from './Welcome';
 
 export default function App() {
   return (
@@ -13,7 +14,8 @@ export default function App() {
       <Switch>
         <Route path="/callback" component={Callback} />
         <Route path="/note/:id" component={withSession(DisplayNote)} />
-        <Route exact path="/" component={withSession(Home)} />
+        <Route exact path="/" component={Welcome} />
+        <Route exact path="/home" component={withSession(Home)} />
       </Switch>
     </Router>
   );

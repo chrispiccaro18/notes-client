@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch, props) => ({
     const action = setSession();
     dispatch(action);
     action.payload.then(() => {
-      props.history.push('/');
+      props.history.push('/home');
     });
   }
 });
